@@ -7,6 +7,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
+import java.util.Map;
 
 @Entity
 @Data
@@ -42,5 +43,5 @@ public class PersonalDetails {
 
     @Type(type = "jsonb")
     @Column(name = "media_links", columnDefinition = "jsonb")
-    private String mediaLinks;
+    private Map<String,String> mediaLinks;
 }
