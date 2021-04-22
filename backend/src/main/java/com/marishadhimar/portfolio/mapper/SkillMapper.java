@@ -6,6 +6,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface SkillMapper {
     SkillMapper INSTANCE = Mappers.getMapper(SkillMapper.class);
@@ -13,8 +15,10 @@ public interface SkillMapper {
     @Mappings({
     })
     SkillDTO toSkillDTO(Skill skill);
+    List<SkillDTO> toSkillDTOList(List<Skill> skillList);
 
     @Mappings({
     })
     Skill toSkill(SkillDTO skillDTO);
+    List<Skill> toSkillList(List<SkillDTO> skillDTOList);
 }

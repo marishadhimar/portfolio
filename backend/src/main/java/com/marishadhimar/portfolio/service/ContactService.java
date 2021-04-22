@@ -1,12 +1,17 @@
 package com.marishadhimar.portfolio.service;
 
-import com.marishadhimar.portfolio.domain.Contact;
+import com.marishadhimar.portfolio.dto.ContactDTO;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ContactService {
-    Optional<Contact> getContact(Long contactId);
+    ContactDTO getContact(Long contactId);
 
-    List<Contact> getAllContacts();
+    List<ContactDTO> getAllContacts();
+
+    ContactDTO createContact(ContactDTO contactDTO);
+
+    ContactDTO updateContact(Long contactId, ContactDTO contactDTO);
+
+    void deleteContact(Long contactId);
 }

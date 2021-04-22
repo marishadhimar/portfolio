@@ -6,13 +6,17 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface PersonalDetailsMapper {
     PersonalDetailsMapper INSTANCE = Mappers.getMapper(PersonalDetailsMapper.class);
 
     @Mappings({})
     PersonalDetailsDTO toPersonalDetailsDTO(PersonalDetails personalDetails);
+    List<PersonalDetailsDTO> toPersonalDetailsDTOList(List<PersonalDetails> personalDetailsList);
 
     @Mappings({})
     PersonalDetails toPersonalDetails(PersonalDetailsDTO personalDetailsDTO);
+    List<PersonalDetails> toPersonalDetailsList(List<PersonalDetailsDTO> personalDetailsDTOList);
 }
